@@ -61,15 +61,18 @@ function changePersonagem() {
   PERSONAGEM_FONTE = personagem;
 }
 
-function udpateModoDeJogo() {
-  let modo = selectElements('input[name="tipo-de-jogo"]:checked').value;
+function changeModoDeJogo() {
+  let modo = selectElements('input[name="game-type"]:checked').value;
 
   JOGO_TIPO = modo;
 }
 
-function changeVelocidadeDoPersonagem() {
+function changeVelocidadePersonagem() {
+
+  /* update this function to <input type="range" name="character-speed" */
+
   let velocidade = selectElements(
-    'input[name="velocidade-do-personagem-radio"]:checked'
+    'input[name="character-speed"]:checked'
   ).value;
 
   const novaVelocidade = {
@@ -82,7 +85,7 @@ function changeVelocidadeDoPersonagem() {
 }
 
 function changeIncrementoPontuacao() {
-  let pontuacao = selectElements('input[name="pontuacao-radio"]:checked').value;
+  let pontuacao = selectElements('input[name="score-item"]:checked').value;
 
   INCREMENTO_PONTUACAO = pontuacao;
 }
