@@ -1,0 +1,9 @@
+let TEMA = "diurno";
+let CANOS_ABERTURA = 300;
+let CANOS_DISTANCIA = 400;
+let JOGO_VELOCIDADE = 3;
+let PERSONAGEM_FONTE = "img/passaro.png";
+let JOGO_TIPO = "normal";
+let PERSONAGEM_VELOCIDADE = [8, -5];
+let INCREMENTO_PONTUACAO = 1;
+let PONTOS_DO_GAME = 0;

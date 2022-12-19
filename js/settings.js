@@ -1,8 +1,8 @@
-function updateCenario() {
-  TEMA = selectElements('input[name="cenario-radio"]:checked').value;
+function changeCenario() {
+  TEMA = selectElements('input[name="game-scenario"]:checked').value;
 
   let barreiras = selectElements(".par-de-barreiras");
-  let game = selectElements(".wm-flappy");
+  let game = selectElements("#game");
 
   if (TEMA == "diurno") {
     game.style.background = "var(--background)";
@@ -19,7 +19,7 @@ function updateCenario() {
   }
 }
 
-function updateAberturaCanos() {
+function changeAberturaCanos() {
   let nivelAbertura = selectElements(
     'input[name="abertura-canos-radio"]:checked'
   ).value;
@@ -30,10 +30,10 @@ function updateAberturaCanos() {
     dificil: 200,
   };
 
-  ABERTURA_DOS_CANOS = novaAbertura[nivelAbertura];
+  CANOS_ABERTURA = novaAbertura[nivelAbertura];
 }
 
-function updateDistanciaEntreCanos() {
+function changeDistanciaEntreCanos() {
   let nivelDistancia = selectElements(
     'input[name="distancia-entre-canos-radio"]:checked'
   ).value;
@@ -44,28 +44,28 @@ function updateDistanciaEntreCanos() {
     dificil: 300,
   };
 
-  DISTANCIA_ENTRE_CANOS = novaDistancia[nivelDistancia];
+  CANOS_DISTANCIA = novaDistancia[nivelDistancia];
 }
 
-function updateVelocidadeDoJogo() {
+function changeVelocidadeDoJogo() {
   let velocidade = selectElements('input[name="velocidade-do-jogo"]').value;
 
-  VELOCIDADE_DO_JOGO = velocidade;
+  JOGO_VELOCIDADE = velocidade;
 }
 
-function updatePersonagem() {
+function changePersonagem() {
   let personagem = selectElements('select[name="personagem-select"]').value;
 
-  PERSONAGEM_SRC = personagem;
+  PERSONAGEM_FONTE = personagem;
 }
 
 function udpateModoDeJogo() {
   let modo = selectElements('input[name="tipo-de-jogo"]:checked').value;
 
-  TIPO_DE_JOGO = modo;
+  JOGO_TIPO = modo;
 }
 
-function updateVelocidadeDoPersonagem() {
+function changeVelocidadeDoPersonagem() {
   let velocidade = selectElements(
     'input[name="velocidade-do-personagem-radio"]:checked'
   ).value;
@@ -76,10 +76,10 @@ function updateVelocidadeDoPersonagem() {
     alta: [10, -7],
   };
 
-  VELOCIDADE_DO_PERSONAGEM = novaVelocidade[velocidade];
+  PERSONAGEM_VELOCIDADE = novaVelocidade[velocidade];
 }
 
-function updateIncrementoPontuacao() {
+function changeIncrementoPontuacao() {
   let pontuacao = selectElements('input[name="pontuacao-radio"]:checked').value;
 
   INCREMENTO_PONTUACAO = pontuacao;
