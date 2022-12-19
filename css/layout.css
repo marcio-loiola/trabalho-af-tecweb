@@ -1,0 +1,12 @@
+.game {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  height: 800px;
+}
+
+.title-forms {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
