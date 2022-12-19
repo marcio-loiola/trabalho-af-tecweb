@@ -10,7 +10,7 @@
 
 <body class="conteudo">
     <h1>Flappy Bird</h1>
-    <div class="game">
+    <div class="game-container">
         <div class="settings">
             <h1 class="title-forms"> Configurações do jogo </h1>
             <form class="form-settings">
@@ -20,14 +20,14 @@
                 </div>
                 <div class="form-item">
                     <label for="scenario">Escolha o cenário:</label>
-                    <input type="radio" name="game-scenario"  value="diurno" checked> Diurno
-                    <input type="radio" name="game-scenario" value="noturno"> Noturno
+                    <input type="radio" name="game-scenario" onchange="changeCenario()" value="diurno" checked> Diurno
+                    <input type="radio" name="game-scenario" onchange="changeCenario()" value="noturno"> Noturno
                 </div>
                 <div class="form-item">
                     <label for="abertura-canos"> Intervalo entre abertura dos canos: </label>
-                    <input type="radio" name="intervalo-abertura-canos" value="facil"> Fácil 
-                    <input type="radio" name="intervalo-abertura-canos" value="medio" checked> Médio 
-                    <input type="radio" name="intervalo-abertura-canos" value="dificil"> Difícil
+                    <input type="radio" name="intervalo-abertura-canos" onchange="changeAberturaCanos()" value="facil"> Fácil 
+                    <input type="radio" name="intervalo-abertura-canos" onchange="changeAberturaCanos()" value="medio" checked> Médio 
+                    <input type="radio" name="intervalo-abertura-canos" onchange="changeAberturaCanos()" value="dificil"> Difícil
                 </div>
 
                 <div class="form-item">
@@ -68,7 +68,7 @@
                     </select>
                 </div>        
         </div>
-        <div id="game" wm-flappy>
+        <div class="game" wm-flappy>
     </div>       
         <script src="js/settings.js"></script>
         <script src="js/flappy.js"></script>

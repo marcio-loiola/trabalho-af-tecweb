@@ -1,8 +1,8 @@
 function changeCenario() {
   TEMA = selectElements('input[name="game-scenario"]:checked').value;
 
-  let barreiras = selectElements(".par-de-barreiras");
-  let game = selectElements("#game");
+  /* let barreiras = selectElements(".par-de-barreiras"); */
+  let game = selectElements(".game");
 
   if (TEMA == "diurno") {
     game.style.background = "var(--background)";
@@ -21,7 +21,7 @@ function changeCenario() {
 
 function changeAberturaCanos() {
   let nivelAbertura = selectElements(
-    'input[name="abertura-canos-radio"]:checked'
+    'input[name="intervalo-abertura-canos"]:checked'
   ).value;
 
   const novaAbertura = {

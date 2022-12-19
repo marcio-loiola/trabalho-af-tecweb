@@ -1,0 +1,20 @@
+:root {
+  --background: #00bfff;
+  --border: dodgerblue;
+
+  --background-dark: #30393c;
+  --border-dark: #004867;
+
+  --blue-800: #0d262d;
+  --blue-900: #0a232a;
+
+  --green-300: #a5e82e;
+  --green-500: #639301;
+
+  --blue-1: #1095b4;
+  --blue-2: #004867;
+
+  --white: #fff;
+  --gray: #363636;
+  --black: #000;
+}
