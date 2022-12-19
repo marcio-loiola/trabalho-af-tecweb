@@ -1,11 +1,11 @@
 function changeCenario() {
   TEMA = selectElements('input[name="game-scenario"]:checked').value;
 
-  /* let barreiras = selectElements(".par-de-barreiras"); */
+  let barreiras = selectElements(".par-de-barreiras");
   let game = selectElements(".game");
 
   if (TEMA == "diurno") {
-    game.style.background = "var(--background)";
+    game.style.background = "#00bfff";
     barreiras.forEach(
       (e) => (e.style.filter = "drop-shadow(16px 16px 20px black)")
     );
@@ -30,12 +30,14 @@ function changeAberturaCanos() {
     dificil: 200,
   };
 
+  console.log("função 3");
+
   CANOS_ABERTURA = novaAbertura[nivelAbertura];
 }
 
-function changeDistanciaEntreCanos() {
+function changeDistCanos() {
   let nivelDistancia = selectElements(
-    'input[name="distancia-entre-canos-radio"]:checked'
+    'select[name="distancia-entre-canos"]:checked'
   ).value;
 
   const novaDistancia = {
@@ -47,7 +49,7 @@ function changeDistanciaEntreCanos() {
   CANOS_DISTANCIA = novaDistancia[nivelDistancia];
 }
 
-function changeVelocidadeDoJogo() {
+function changeVelocidadeJogo() {
   let velocidade = selectElements('input[name="velocidade-do-jogo"]').value;
 
   JOGO_VELOCIDADE = velocidade;
