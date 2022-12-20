@@ -1,4 +1,3 @@
-<!-- simple html page -->
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +9,7 @@
 <body>
    <div>
       <?php
-      echo ("Configurações do jogo: ");
+      echo ("Configurações escolhidas por você: ");
       ?>
    </div>
    <div>
@@ -53,6 +52,44 @@
       echo (isset($_POST['character-speed']) ? $_POST['character-speed'] : 'No character-speed');
       ?>
    </div>
+
+   <!-- Código php para conectar no banco de dados -->
+   <?php
+   include("Conexao.php");
+
+   // Criar a conexão
+   $conn = new Conexao();
+
+   // Checar a conexão
+   if ($conn->connect_error()) {
+      die("Connection failed: " . $conn->connect_error());
+   }
+
+   // Inserir dados no banco
+   $sql = "INSERT INTO settings (nome_jogador, abertura_canos, dist_canos, velocidade_jogo, personagem, tipo_jogo, tema_jogo, velocidade_personagem, pontuação)
+   VALUES ('" . $_POST['name'] . "', '" . $_POST['intervalo-abertura-canos'] . "', '" . $_POST['distancia-entre-canos'] . "', '" . $_POST['game-speed'] . "', '" . $_POST['personagens'] . "', '" . $_POST['game-type'] . "', '" . $_POST['game-scenario'] . "', '" . $_POST['character-speed'] . "', '" . $_POST['score-item'] . "')";
+
+   if (
+      $conn->query(
+         $sql
+      ) === TRUE
+   ) {
+      echo "Dados inseridos com sucesso no banco de dados!";
+   } else {
+      echo "Oops! Tivemos um problema!" . $sql . "<br>" . $conn->error();
+   }
+
+   $conn->close();
+
+   echo (
+      "<button onclick='goToIndex()'>Ir para o game</button>
+      <script>
+      const goToIndex = () => {
+         location.href = '../game.php';
+      }
+      </script>"
+   );
+   ?>
 </body>
 
 </html>
