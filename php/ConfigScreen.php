@@ -14,7 +14,7 @@
    </div>
    <div>
       <?php
-      echo (isset($_POST['name']) ? $_POST['name'] : 'No name');
+      echo (isset($_POST['name']) ? $_POST['name'] : "<p>No name</p>");
       ?>
    </div>
    <div>
@@ -74,7 +74,7 @@
          $sql
       ) === TRUE
    ) {
-      echo "Dados inseridos com sucesso no banco de dados!";
+      echo "Dados inseridos com sucesso no banco de dados! <br>";
    } else {
       echo "Oops! Tivemos um problema!" . $sql . "<br>" . $conn->error();
    }

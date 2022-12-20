@@ -1,7 +1,6 @@
 <?php
 class Conexao
 {
-
     private $url;
     private $usuario;
     private $senha;

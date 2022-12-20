@@ -13,11 +13,6 @@ function Barreira(reversa = false) {
 
   this.setAltura = (altura) => (corpo.style.height = `${altura}px`);
 }
-/* 
-const b= new Barreira(false)
-b.setAltura(300)
-document.querySelector('[wm-flappy]').appendChild(b.elemento) 
- */
 
 function ParDeBarreiras(altura, abertura, popsicaoNaTela) {
   this.elemento = novoElemento("div", "par-de-barreiras");
@@ -186,4 +181,5 @@ function FlappyBird() {
     }, 20);
   };
 }
+
 new FlappyBird().start();

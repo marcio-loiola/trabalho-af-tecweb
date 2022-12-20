@@ -81,5 +81,4 @@
         <script src="js/settings.js"></script>
         <script src="js/flappy.js"></script>
 </body>
-
 </html>
